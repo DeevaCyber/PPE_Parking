@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::resource('place', PlaceController::class);
+Route::resource('place', App\Http\Controllers\PlaceController::class);
 
 
 

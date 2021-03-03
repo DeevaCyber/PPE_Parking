@@ -12,7 +12,7 @@
       <div class="row" style="margin-top: 5rem;">
         <div class="col-lg-12 margin-tb">
           <div class="pull-left">
-            <h2>PLace de Parking</h2>
+            <h2>Place de Parking</h2>
         </div>
         <div class="pull-right">
           <a class="btn btn-success" href="{{route('place.create')}}">Création d'une place</a>
