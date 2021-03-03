@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+
+Route::resource('place', PlaceController::class);
+
+
+
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/

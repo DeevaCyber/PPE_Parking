@@ -1,0 +1,11 @@
+Lien pour faire l'application :
+
+https://laravel.com/docs/8.x#getting-started-on-linux
+https://laravelcollective.com/
+https://stackoverflow.com/questions/42205307/laravel-show-and-hide-elements-depending-on-a-user-state
+https://laravel.com/docs/8.x/migrations
+https://www.laravelcode.com/post/laravel-8-crud-application-tutorial-with-example
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+

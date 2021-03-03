@@ -1,0 +1,37 @@
+DELETE FROM utilisateur;
+Insert Into utilisateur Values(001, 'Spooner', 'Madelyn', 'SpoonerMadelyn@yahoo.fr', 'motdepasse', '1');
+Insert Into utilisateur Values(002, 'Conway', 'Ella', 'EllaConway@gmail.com', '123456', '0');
+Insert Into utilisateur Values(003, 'Maccray', 'Justin', '', 'pasdemail', '0');
+SELECT * from utilisateur;
+
+DELETE FROM parking;
+Insert Into parking Values(001);
+Insert Into parking Values(002);
+Insert Into parking Values(003);
+Insert Into parking Values(004);
+Insert Into parking Values(005);
+Insert Into parking Values(006);
+Insert Into parking Values(007);
+Insert Into parking Values(008);
+Insert Into parking Values(009);
+Insert Into parking Values(010);
+Insert Into parking Values(011);
+Insert Into parking Values(012);
+Insert Into parking Values(013);
+Insert Into parking Values(014);
+Insert Into parking Values(015);
+Insert Into parking Values(016);
+Insert Into parking Values(017);
+Insert Into parking Values(018);
+Insert Into parking Values(019);
+Insert Into parking Values(020);
+Insert Into parking Values(021);
+Insert Into parking Values(022);
+Insert Into parking Values(023);
+Insert Into parking Values(024);
+Insert Into parking Values(025);
+SELECT * from parking;
+
+DELETE FROM reservation;
+Insert Into reservation Values(001, 001, '2025-04-11', '2025-04-12');
+Insert Into reservation Values(002, 021, '2023-10-10', '2024-05-01');
