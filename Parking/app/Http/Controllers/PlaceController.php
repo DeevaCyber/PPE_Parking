@@ -7,48 +7,99 @@ use Illuminate\Http\Request;
 
 class PlaceController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-      $data = Place::latest()->paginate(5);
+        $place = Place::latest()->paginate(5);
 
-      return view('place.index',compact('data'))
-            -> with('i',(request()->input('page', 1 )- 1) * 5);
+        return view('place.index', compact('place'))
+              ->with('i', (request()->input('page', 1) - 1) *5);
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
-      return view('place.create');
+        return view('place.create');
     }
 
-    public function store (Request $request)
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
-      $request->validate([
-        'codeplace' => 'required'
-      ]);
+        $request->validate([
+          'codeplace' => 'required'
+        ]);
 
-      Place::create($request->all());
+        Place::create($request->all());
 
-      return redirect()->route('place.index')
-                      ->with ('sucess', 'Place created successfully');
+        return redirect()->route('place.index')
+                        ->with('success', 'PLace created successfully');
     }
-    public function show (Place $place)
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Place  $place
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Place $place)
     {
-      return view ('place.show',compact('place'));
+        return view('place.show', compact('place'));
     }
 
-    public function edit (Place $place)
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Place  $place
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Place $place)
     {
-      return view('place.edit',compact('place'));
+        return view('place.edit',compact('place'));
     }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Place  $place
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request, Place $place)
     {
-      $request->validate([
-        'codeplace' => 'required'
-      ]);
+        $request->validate([
+          'codeplace' => 'required'
+        ]);
 
-      $place->update($request->all());
+        $place->update($request->all());
 
-      return redirect()->route('place.index')
-                      ->with('sucess', 'Place updated successfully');
-      }
+        return redirect()->route('place.index')
+                        ->with('success', 'Place updated successfully');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Place  $place
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Place $place)
+    {
+        $place->delete();
+
+        return redirect()->route('place.index')
+                        ->with('success','Place deleted successfully');
+    }
 }

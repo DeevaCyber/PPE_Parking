@@ -13,4 +13,5 @@ class Place extends Model
     protected $fillable = [
       'codeplace'
     ];
+
 }

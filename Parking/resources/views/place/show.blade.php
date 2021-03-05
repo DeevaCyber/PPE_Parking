@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Application Parking</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css">
-  </head>
-  <body>
 
     @extends('place.layout')
 
@@ -19,6 +12,7 @@
         </div>
       </div>
     </div>
+
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
@@ -28,6 +22,3 @@
       </div>
     </div>
     @endsection
-
-  </body>
-</html>

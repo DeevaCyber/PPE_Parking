@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Application Parking</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css">
-  </head>
-  <body>
 
     @extends('place.layout')
 
@@ -24,14 +17,14 @@
     <div class="alert alert-danger">
       <strong>ALERTE !</strong><br>
       <ul>
-        @foreach ($errors->all() as error)
+        @foreach ($errors->all() as $error)
           <li>{{ $error }}</li>
         @endforeach
       </ul>
     </div>
     @endif
 
-    <form action="{{ route('place.update', $place->codeplace) }}" method="post">
+    <form action="{{ route('place.update', $place->id) }}" method="post">
       @csrf
       @method('PUT')
 
@@ -39,7 +32,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
           <div class="form-group">
             <strong>Nom de la place</strong>
-            <input type="text" name="place" value="{{ $place->codeplace }}" class="form-control" placeholder="ENTREZ LE NOM">
+            <input type="text" name="codeplace" value="{{ $place->codeplace }}" class="form-control" placeholder="ENTREZ LE NOM">
           </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -48,6 +41,3 @@
       </div>
     </form>
     @endsection
-
-  </body>
-</html>

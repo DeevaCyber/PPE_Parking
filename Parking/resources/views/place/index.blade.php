@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Application Parking</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css">
-  </head>
-  <body>
 
     @extends('place.layout')
 
@@ -28,17 +21,18 @@
 
     <table class="table table-bordered">
       <tr>
-        <th>Numéro de la place</th>
+        <th>Place n°</th>
+        <th>Nom</th>
         <th width="280px">Action</th>
       </tr>
-      @foreach ($data as $key => $value)
+      @foreach ($place as $place)
       <tr>
         <td>{{ ++$i }}</td>
-        <td>{{ $value->codeplace }}</td>
+        <td>{{ $place->codeplace }}</td>
         <td>
-          <form action="{{ route('place.destroy', $value->codeplace) }}" method="post">
-            <a class="btn btn-info" href="{{ route('place.show', $value->codeplace) }}">Voir</a>
-            <a class="btn btn-primary" href="{{ route('place.edit', $value->codeplace) }}">Modifier</a>
+          <form action="{{ route('place.destroy', $place->id) }}" method="post">
+            <a class="btn btn-info" href="{{ route('place.show', $place->id) }}">Voir</a>
+            <a class="btn btn-primary" href="{{ route('place.edit', $place->id) }}">Modifier</a>
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Supprimer</button>
@@ -47,7 +41,5 @@
       </tr>
       @endforeach
     </table>
-    {!! $data->links() !!}
+
     @endsection
-  </body>
-</html>
