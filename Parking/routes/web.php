@@ -27,3 +27,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('status/{id}', 'HomeController@status')->name('status');
+
+Route::resource('place', App\Http\Controllers\PlaceController::class);
