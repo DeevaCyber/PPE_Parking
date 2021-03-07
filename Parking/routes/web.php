@@ -17,22 +17,16 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
+Route::redirect('/','/login');
 
-/*Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');*/
+
+Route::get('/dashboard', function () {
+    return view('index');
+})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
 Auth::routes();
 
-Route::get('/', function() {
-  return view('index');
-})->middleware('auth');
-
-
-Route::get('/', function () {
-    return view('index');
-  });
 Route::resource('place', App\Http\Controllers\PlaceController::class);
 Route::resource('user', App\Http\Controllers\UserController::class);
