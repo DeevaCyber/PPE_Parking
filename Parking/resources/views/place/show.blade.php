@@ -7,9 +7,6 @@
         <div class="pull-left">
           <h2>Place</h2>
         </div>
-        <div class="pull-right">
-          <a class="btn btn-primary" href="{{ route('place.index') }}">Retour</a>
-        </div>
       </div>
     </div>
 

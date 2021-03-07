@@ -45,7 +45,7 @@ class PlaceController extends Controller
         Place::create($request->all());
 
         return redirect()->route('place.index')
-                        ->with('success', 'PLace created successfully');
+                        ->with('success', 'Place created successfully');
     }
 
     /**
