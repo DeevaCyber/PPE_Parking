@@ -30,7 +30,7 @@
         <td>{{ $user->name }}</td>
         <td>{{ $user->email }}</td>
         <td>
-          <form action="{{ route('place.destroy', $user->id) }}" method="post">
+          <form action="{{ route('user.destroy', $user->id) }}" method="post">
             <a class="btn btn-info" href="{{ route('user.show', $user->id) }}">Voir</a>
             <a class="btn btn-primary" href="{{ route('user.edit', $user->id) }}">Modifier</a>
             @csrf
