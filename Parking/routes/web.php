@@ -30,3 +30,4 @@ Auth::routes();
 
 Route::resource('place', App\Http\Controllers\PlaceController::class);
 Route::resource('user', App\Http\Controllers\UserController::class);
+Route::resource('reservation', App\Http\Controllers\ReservationController::class );

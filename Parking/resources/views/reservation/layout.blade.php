@@ -12,6 +12,8 @@
         <div class="pull-left">
         </div>
 
+
+
         <div class="pull-right">
           <a class="btn btn-primary" href="{{ route('user.index') }}">Liste des utilisateurs</a>
         </div>
